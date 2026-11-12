@@ -1,0 +1,188 @@
+/* ============================================
+   1. PALETA DE COLORES (variables)
+   Para cambiar los colores de TODA la página,
+   modificá solo estos valores. Son provisorios
+   Paleta neutra (grises, blanco y negro suave).
+   ============================================ */
+:root { /* :root = variables disponibles en todo el archivo */
+  --color-principal: #2f2f2f;  /* Gris oscuro: encabezado, títulos y pie */
+  --color-secundario: #6b6b6b; /* Gris medio: bordes, enlaces y detalles */
+  --color-fondo: #f3f3f3;      /* Gris muy claro: fondo general de la página */
+  --color-tarjeta: #ffffff;    /* Blanco: fondo de las tarjetas */
+  --color-texto: #2b2b2b;      /* Color del texto común */
+  --color-texto-claro: #ffffff;/* Texto sobre fondos oscuros */
+  --color-linea: #d9d9d9;      /* Gris claro: líneas que separan secciones */
+}
+
+/* ============================================
+   2. REGLAS GENERALES
+   ============================================ */
+* { /* El asterisco afecta a TODOS los elementos */
+  margin: 0;              /* Quita los márgenes por defecto del navegador */
+  padding: 0;             /* Quita los rellenos por defecto */
+  box-sizing: border-box; /* El ancho incluye el relleno: evita que las cajas se desborden */
+}
+
+html { /* Elemento raíz de la página */
+  scroll-behavior: smooth; /* Al tocar el menú, la página se desliza suavemente */
+}
+
+body { /* Todo el contenido visible */
+  font-family: "Segoe UI", Arial, sans-serif; /* Tipografía del texto (si no existe la primera, usa la siguiente) */
+  font-size: 1rem;                 /* Tamaño base del texto (1rem = 16px aprox.) */
+  line-height: 1.6;                /* Espacio entre renglones, mejora la lectura */
+  color: var(--color-texto);       /* Usa la variable de color de texto */
+  background-color: var(--color-fondo); /* Usa la variable de color de fondo */
+}
+
+h1, h2, h3 { /* Todos los títulos juntos */
+  font-family: Georgia, "Times New Roman", serif; /* Tipografía con serif para los títulos */
+  color: var(--color-principal);  /* Color de los títulos */
+  line-height: 1.2;               /* Renglones más juntos en títulos */
+}
+
+a { /* Todos los enlaces */
+  color: var(--color-secundario); /* Color de los enlaces */
+}
+
+/* ============================================
+   3. ENCABEZADO
+   ============================================ */
+#encabezado { /* Se selecciona con # porque en el HTML usa id="encabezado" */
+  background-color: var(--color-principal); /* Fondo del encabezado */
+  color: var(--color-texto-claro);          /* Texto claro sobre fondo oscuro */
+  text-align: center;                       /* Centra el texto */
+  padding: 3rem 1.5rem 1.5rem;              /* Espacio interno: arriba, laterales, abajo */
+}
+
+#encabezado h1 { /* El h1 que está dentro del encabezado */
+  color: var(--color-texto-claro); /* Lo pone blanco (sino heredaría el color oscuro) */
+  font-size: 2.6rem;               /* Tamaño grande para el nombre */
+}
+
+.subtitulo { /* Clase "subtitulo" del HTML (se usa con punto) */
+  margin-top: 0.5rem;  /* Separa el subtítulo del nombre */
+  font-size: 1.1rem;   /* Tamaño del subtítulo */
+}
+
+/* ============================================
+   4. MENÚ DE NAVEGACIÓN (Flexbox)
+   ============================================ */
+#menu { /* Contenedor de los enlaces */
+  display: flex;             /* Activa Flexbox: los enlaces quedan en fila */
+  flex-wrap: wrap;           /* Si no entran, pasan a la línea de abajo (clave en celulares) */
+  justify-content: center;   /* Centra los enlaces horizontalmente */
+  gap: 0.5rem 1.5rem;        /* Espacio entre enlaces: vertical y horizontal */
+  margin-top: 1.5rem;        /* Separa el menú del subtítulo */
+}
+
+#menu a { /* Cada enlace del menú */
+  color: var(--color-texto-claro); /* Color blanco */
+  text-decoration: none;           /* Quita el subrayado */
+  padding: 0.3rem 0;               /* Espacio arriba y abajo del texto */
+  border-bottom: 2px solid transparent; /* Línea invisible que aparece al pasar el mouse */
+}
+
+#menu a:hover { /* Cuando el mouse pasa por encima */
+  border-bottom-color: var(--color-secundario); /* Muestra la línea de color */
+}
+
+/* ============================================
+   5. CONTENIDO PRINCIPAL Y SECCIONES
+   ============================================ */
+main { /* Contenedor del contenido central */
+  max-width: 900px;    /* Ancho máximo: en pantallas grandes no se estira de más */
+  margin: 0 auto;      /* Centra el bloque horizontalmente */
+  padding: 1rem 1.5rem;/* Espacio interno a los costados */
+}
+
+.seccion { /* Clase compartida por todas las secciones */
+  padding: 2rem 0;                                  /* Espacio arriba y abajo de cada sección */
+  border-bottom: 1px solid var(--color-linea);      /* Línea fina que separa secciones (color en la paleta) */
+}
+
+.seccion h2 { /* Título de cada sección */
+  font-size: 1.7rem;                                /* Tamaño del título */
+  margin-bottom: 1rem;                              /* Espacio debajo del título */
+  padding-left: 0.75rem;                            /* Espacio entre la barra de color y el texto */
+  border-left: 5px solid var(--color-secundario);   /* Barra de color a la izquierda */
+}
+
+/* ============================================
+   6. DATOS PERSONALES
+   ============================================ */
+.lista-datos { /* Lista de datos */
+  list-style: none; /* Quita las viñetas */
+}
+
+.lista-datos li { /* Cada dato */
+  padding: 0.4rem 0; /* Espacio arriba y abajo de cada línea */
+}
+
+/* ============================================
+   7. TARJETAS (estudios y experiencia) con Flexbox
+   ============================================ */
+.contenedor-tarjetas { /* Caja que contiene varias tarjetas */
+  display: flex;   /* Activa Flexbox: tarjetas una al lado de la otra */
+  flex-wrap: wrap; /* Si no hay lugar, la tarjeta baja a la línea siguiente */
+  gap: 1.5rem;     /* Espacio entre tarjetas */
+}
+
+.tarjeta { /* Cada tarjeta */
+  flex: 1 1 280px;                       /* Puede crecer y achicarse; ancho ideal 280px */
+  background-color: var(--color-tarjeta);/* Fondo blanco */
+  padding: 1.25rem;                      /* Espacio interno */
+  border-radius: 8px;                    /* Esquinas redondeadas */
+  border-top: 4px solid var(--color-secundario); /* Borde superior de color */
+}
+
+.tarjeta h3 { /* Título dentro de la tarjeta */
+  font-size: 1.2rem;     /* Tamaño del título */
+  margin-bottom: 0.4rem; /* Espacio debajo */
+}
+
+.periodo { /* Línea con las fechas */
+  font-weight: bold;               /* Negrita */
+  color: var(--color-secundario);  /* Color de acento */
+  margin-bottom: 0.5rem;           /* Espacio debajo */
+}
+
+/* ============================================
+   8. HABILIDADES (etiquetas con Flexbox)
+   ============================================ */
+.lista-habilidades { /* Lista de habilidades */
+  display: flex;   /* Activa Flexbox */
+  flex-wrap: wrap; /* Las etiquetas pasan a la línea siguiente si no entran */
+  gap: 0.75rem;    /* Espacio entre etiquetas */
+  list-style: none;/* Quita las viñetas */
+}
+
+.lista-habilidades li { /* Cada habilidad */
+  background-color: var(--color-principal); /* Fondo de la etiqueta */
+  color: var(--color-texto-claro);          /* Texto claro */
+  padding: 0.4rem 1rem;                     /* Espacio interno de la etiqueta */
+  border-radius: 20px;                      /* Bordes muy redondeados (forma de píldora) */
+}
+
+/* ============================================
+   9. PIE DE PÁGINA
+   ============================================ */
+#pie { /* Footer, id="pie" en el HTML */
+  background-color: var(--color-principal); /* Mismo color que el encabezado */
+  color: var(--color-texto-claro);          /* Texto claro */
+  text-align: center;                       /* Texto centrado */
+  padding: 1.5rem;                          /* Espacio interno */
+  margin-top: 2rem;                         /* Separa el pie del contenido */
+  font-size: 0.9rem;                        /* Texto un poco más chico */
+}
+
+/* ============================================
+   10. RESPONSIVE (celulares)
+   Estas reglas se aplican SOLO en pantallas de
+   600px de ancho o menos (celulares).
+   ============================================ */
+@media (max-width: 600px) { /* "Si la pantalla mide 600px o menos..." */
+  #encabezado h1 { font-size: 2rem; }      /* Nombre más chico para que entre */
+  .seccion h2 { font-size: 1.4rem; }       /* Títulos de sección más chicos */
+  main { padding: 0.5rem 1rem; }           /* Menos margen lateral */
+}

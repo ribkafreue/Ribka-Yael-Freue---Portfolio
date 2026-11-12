@@ -1,0 +1,111 @@
+<!DOCTYPE html> <!-- Indica al navegador que este archivo es HTML moderno (HTML5) -->
+<html lang="es"> <!-- Abre la página; lang="es" indica que el contenido está en español -->
+<head> <!-- Zona de configuración: no se ve en pantalla -->
+  <meta charset="UTF-8"> <!-- Permite mostrar tildes y la letra ñ correctamente -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Clave para que se vea bien en celulares (responsive) -->
+  <title>Ribka Yael Freue | Portfolio</title> <!-- Texto que aparece en la pestaña del navegador -->
+  <link rel="stylesheet" href="estilos.css"> <!-- Conecta este HTML con el archivo CSS (deben estar en la misma carpeta) -->
+</head>
+
+<body> <!-- Todo lo que se ve en la página va dentro de body -->
+
+  <!-- ========== ENCABEZADO ========== -->
+  <header id="encabezado"> <!-- Bloque superior; el id permite darle estilo único en el CSS -->
+    <h1>Ribka Yael Freue</h1> <!-- Título principal: tu nombre (solo debe haber un h1 por página) -->
+    <p class="subtitulo">Estudiante de Traductorado Técnico Científico y Literario en Inglés</p> <!-- Tu título profesional -->
+
+    <nav id="menu"> <!-- Menú de navegación con enlaces internos -->
+      <a href="#perfil">Perfil</a> <!-- Al hacer clic, baja hasta el elemento con id="perfil" -->
+      <a href="#datos">Datos personales</a> <!-- Lleva a id="datos" -->
+      <a href="#estudios">Estudios</a> <!-- Lleva a id="estudios" -->
+      <a href="#experiencia">Experiencia</a> <!-- Lleva a id="experiencia" -->
+      <a href="#habilidades">Habilidades</a> <!-- Lleva a id="habilidades" -->
+      <a href="#idiomas">Idiomas</a> <!-- Lleva a id="idiomas" -->
+    </nav>
+  </header>
+
+  <main> <!-- Contenido principal de la página -->
+
+    <!-- ========== PERFIL ========== -->
+    <section id="perfil" class="seccion"> <!-- section agrupa un tema; la clase "seccion" comparte estilo entre todas -->
+      <h2>Perfil</h2> <!-- Título de la sección -->
+      <p>Soy una persona activa y comprometida, con muchas ganas de aprender. Me entusiasma incorporar conocimientos nuevos, perfeccionar mis habilidades y comunicarme de manera clara y eficaz. También soy resolutiva y tengo iniciativa: aspiro a crecer profesionalmente, afrontar nuevos retos y, más adelante, dirigir y coordinar equipos de trabajo.</p> <!-- Tu descripción de perfil, parafraseada. Para cambiarla, editá solo el texto entre <p> y </p> -->
+    </section>
+
+    <!-- ========== DATOS PERSONALES ========== -->
+    <section id="datos" class="seccion">
+      <h2>Datos personales</h2>
+      <ul class="lista-datos"> <!-- Lista sin viñetas (el CSS las quita) -->
+        <li><strong>Nombre:</strong> Ribka Yael Freue</li> <!-- strong pone el texto en negrita -->
+        <li><strong>Fecha de nacimiento:</strong> 26/11/2004</li>
+        <li><strong>Residencia:</strong> Ciudad Autónoma de Buenos Aires, Argentina</li>
+        <li><strong>Email:</strong> <a href="mailto:ribkafreue@gmail.com">ribkafreue@gmail.com</a></li> <!-- mailto: abre el programa de correo -->
+        <li><strong>Teléfono:</strong> <a href="tel:+5491153253300">+54 9 11 5325 3300</a></li> <!-- tel: permite llamar desde el celular -->
+      </ul>
+    </section>
+
+    <!-- ========== ESTUDIOS ========== -->
+    <section id="estudios" class="seccion">
+      <h2>Estudios cursados</h2>
+
+      <div class="contenedor-tarjetas"> <!-- Caja Flexbox que ordena las tarjetas (una al lado de la otra o apiladas) -->
+
+        <article class="tarjeta"> <!-- Una tarjeta por cada estudio -->
+          <h3>Traductorado Técnico Científico y Literario en Inglés</h3> <!-- Nombre de la carrera -->
+          <p class="periodo">2023 – 2026 (cursando tercer año)</p> <!-- Fechas -->
+          <p>Instituto Daguerre: 2023 a julio de 2026.</p> <!-- Primer instituto -->
+          <p>Profesorado San Agustín: agosto a diciembre de 2026.</p> <!-- Segundo instituto -->
+        </article>
+
+        <article class="tarjeta">
+          <h3>Bachillerato en Comunicación</h3>
+          <p class="periodo">2018 – 2022</p>
+          <p>Instituto Toratenu</p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ========== EXPERIENCIA LABORAL ========== -->
+    <section id="experiencia" class="seccion">
+      <h2>Experiencia laboral</h2>
+      <article class="tarjeta">
+        <h3>Profesora particular de inglés</h3> <!-- Puesto -->
+        <p class="periodo">2023 – 2024</p>
+        <p>Clases particulares de inglés a niños de nivel inicial y primario.</p>
+      </article>
+    </section>
+
+    <!-- ========== HABILIDADES ========== -->
+    <section id="habilidades" class="seccion">
+      <h2>Habilidades</h2>
+      <ul class="lista-habilidades"> <!-- Lista que el CSS convierte en "etiquetas" con Flexbox -->
+        <li>Organización</li> <!-- Para agregar una habilidad, copiá una línea y cambiá el texto -->
+        <li>Puntualidad</li>
+        <li>Responsabilidad</li>
+        <li>Flexibilidad</li>
+        <li>Rápido aprendizaje</li>
+        <li>Buenas relaciones interpersonales</li>
+        <li>Buena comunicación</li>
+      </ul>
+    </section>
+
+    <!-- ========== IDIOMAS ========== -->
+    <section id="idiomas" class="seccion"> <!-- Nueva sección; el id coincide con el enlace del menú -->
+      <h2>Idiomas</h2>
+      <ul class="lista-habilidades"> <!-- Reutiliza la clase de Habilidades, así tiene el mismo estilo de etiquetas -->
+        <li>Español</li> <!-- Para agregar un idioma, copiá una línea y cambiá el texto -->
+        <li>Inglés</li>
+        <li>Hebreo</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- ========== PIE DE PÁGINA ========== -->
+  <footer id="pie"> <!-- Parte final de la página -->
+    <p>Ribka Yael Freue · ribkafreue@gmail.com · +54 9 11 5325 3300</p> <!-- Datos de contacto repetidos -->
+  </footer>
+
+</body> <!-- Cierra el cuerpo de la página -->
+</html> <!-- Cierra el documento -->
